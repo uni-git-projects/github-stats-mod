@@ -1,0 +1,74 @@
+# modified by Adam Ross (https://www.github.com/profile-icons/github-stats-modified), 26/05/26.
+name: Generate Stats Images
+
+on:
+  push:
+    branches: 
+      - main
+    paths:
+      - "src/**"
+      - ".github/workflows/**"
+      - "build.zig*"
+  schedule:
+    - cron: "0 0 * * 4"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    shell: bash -euxo pipefail {0}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v7
+
+    - uses: mlugg/setup-zig@v2
+      with:
+        version: 0.16.0
+
+    - name: Check
+      run: |
+        zig fmt --check .
+
+    - name: Build
+      run: |
+        zig build
+
+    - name: Checkout history branch
+      run: |
+        git config --global user.name "r055a/github-stats-modified"
+        git config --global user.email "github-stats[bot]@r055a.github.io"
+        # Push generated files to the generated branch
+        git pull
+        git checkout generated || git checkout -b generated
+
+    - name: Generate images
+      run: |
+        ./zig-out/bin/github-stats
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        INCLUDE_REPOS: ${{ secrets.INCLUDE_REPOS }}
+        EXCLUDE_REPOS: ${{ secrets.EXCLUDE_REPOS }}
+        EXCLUDE_LANGS: ${{ secrets.EXCLUDE_LANGS }}
+        IS_LOCAL: ${{ secrets.IS_LOCAL }}
+        EXCLUDE_PRIVATE: "false"
+        EXCLUDE_FORK: "true"
+        EXCLUDE_LANGS_TYPE_DATA: "true"
+        EXCLUDE_LANGS_TYPE_PROSE: "true"
+        EXCLUDE_LANGS_TYPE_MARKUP: "false"
+        EXCLUDE_LANGS_TYPE_PROGRAMMING: "false"
+        SILENT: "true"
+        # TODO: Remove this when they get their API working again
+        # https://github.com/orgs/community/discussions/192970
+        MAX_RETRIES: 5
+
+    - name: Commit to the repo
+      run: |
+        git add .
+        # Force the build to succeed, even if no files were changed
+        git commit -m 'Update generated files' || true
+        git push --set-upstream origin generated

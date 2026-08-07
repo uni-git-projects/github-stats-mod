@@ -1,0 +1,108 @@
+<!-- modified by Adam Ross (https://www.github.com/profile-icons/github-stats-modified), 26/05/26. -->
+<svg id="portable-dark-mode-support" width="360" height="210" xmlns="http://www.w3.org/2000/svg">
+<style>
+svg {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+#background {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  stroke: rgb(225, 228, 232);
+  rx: 6px;
+  ry: 6px;
+}
+
+foreignObject {
+  width: calc(100% - 10px - 32px);
+  height: calc(100% - 10px - 32px);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+th {
+  padding: 0.5em;
+  padding-top: 0;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+td {
+  margin-bottom: 16px;
+  margin-top: 8px;
+  padding: 0.25em;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+tr {
+  transform: translateX(-200%);
+  animation: slideIn 2s ease-in-out forwards;
+}
+
+.octicon {
+  margin-right: 1ch;
+  vertical-align: top;
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+@media (prefers-color-scheme: light) {
+  #background {
+    fill: white;
+    stroke-width: 1px;
+  }
+
+  th {
+    color: rgb(3, 102, 214);
+  }
+
+  td {
+    color: rgb(88, 96, 105);
+  }
+
+  .octicon {
+    fill: rgb(88, 96, 105);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #background {
+    fill: #0d1117;
+    stroke-width: 0.5px;
+  }
+
+  th {
+    color: #58a6ff;
+  }
+
+  td {
+    color: #c9d1d9;
+  }
+
+  .octicon {
+    fill: #8b949e;
+  }
+}
+</style>
+<g>
+<rect x="5" y="5" id="background" />
+<g>
+<switch>
+{{ i18n_overview_blocks }}
+</switch>
+</g>
+</g>
+</svg>
