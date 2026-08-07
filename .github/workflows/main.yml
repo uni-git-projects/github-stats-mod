@@ -40,8 +40,8 @@ jobs:
 
     - name: Checkout history branch
       run: |
-        git config --global user.name "r055a/github-stats-modified"
-        git config --global user.email "github-stats[bot]@r055a.github.io"
+        git config --global user.name "profile-icons"
+        git config --global user.email "github-stats-mod[bot]@r055a.github.io"
         # Push generated files to the generated branch
         git pull
         git checkout generated || git checkout -b generated
@@ -56,7 +56,7 @@ jobs:
         EXCLUDE_LANGS: ${{ secrets.EXCLUDE_LANGS }}
         IS_LOCAL: ${{ secrets.IS_LOCAL }}
         EXCLUDE_PRIVATE: "false"
-        EXCLUDE_FORK: "true"
+        EXCLUDE_FORK: "false"
         EXCLUDE_LANGS_TYPE_DATA: "true"
         EXCLUDE_LANGS_TYPE_PROSE: "true"
         EXCLUDE_LANGS_TYPE_MARKUP: "false"
