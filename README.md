@@ -3,9 +3,8 @@
 ![](https://raw.githubusercontent.com/profile-icons/github-stats-modified/refs/heads/generated/overview.svg)
 ![](https://raw.githubusercontent.com/profile-icons/github-stats-modified/refs/heads/generated/languages.svg)
 
-Generate visualizations of GitHub user and repository statistics with GitHub   
-Actions. Visualizations can also include data from private repositories, and   
-from repositories you have contributed to, but don't own. Contributions welcome!  
+Generate visualizations of GitHub user and repository statistics with GitHub Actions. Visualizations can also include    
+data from private repositories, and from repositories you have contributed to, but don't own. Contributions welcome!   
 
 > Modification of [jstrieb/github-stats](https://github.com/jstrieb/github-stats):
 
@@ -20,15 +19,18 @@ from repositories you have contributed to, but don't own. Contributions welcome!
 * update once weekly
 * Removed from past two modifications (before the port from Python to Zip):
   * average user contribution stats across included repositories
-    * this was for personal reasons and initially removed '21 following instant ironic plagiarism
+    * this was for personal reasons and initially removed '21 following instant karma: ironic plagiarism
     * refer to [profile-icons/readme-repo-pins](https://github.com/profile-icons/readme-repo-pins) for alternative (optional) user contribution stats per repository
       * an [example is found here](https://github.com/uni-git-projects)
+  * sum of contributors and collaborators across included repositories
+    * refer to [profile-icons/readme-repo-pins](https://github.com/profile-icons/readme-repo-pins) for alternative user contributor count per repository
+      * an [example is found here](https://github.com/uni-git-projects)
   * repository view count tracked from initial API-fetch, not current past two weeks
-  * user Issues and PR stats
+  * user Issue and PR stats
   * representation of how many repositories contributed to are owned by the user
   * modifications which `jstrieb/github-stats` now supports:
     * specifying dark/light-mode theme for GitHub Markdown
-      * this modification uses portable CSS dark/light-mode not restricted to GitHub markdown
+      * this modification instead uses portable CSS dark/light-mode not restricted to GitHub markdown
     * workflow: create/update a separate branch from `main` for generated images
 
 ## Background
