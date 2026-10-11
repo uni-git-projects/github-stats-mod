@@ -1,0 +1,93 @@
+<!-- modified by Adam Ross (https://www.github.com/profile-icons/github-stats-modified), 26/05/26 - 03/09/26. -->
+<svg id="portable-dark-mode-support" width="360" height="210" xmlns="http://www.w3.org/2000/svg">
+<style>
+svg {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+#background {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  stroke: rgb(225, 228, 232);
+  rx: 6px;
+  ry: 6px;
+}
+
+foreignObject {
+  width: calc(100% - 10px - 32px);
+  height: calc(100% - 10px - 32px);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+th {
+  padding: 0.5em;
+  padding-top: 0;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+td {
+  margin-bottom: 16px;
+  margin-top: 8px;
+  padding: 0.25em;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+tr {
+  transform: translateX(-200%);
+  animation: slideIn 2s ease-in-out forwards;
+}
+
+.octicon {
+  margin-right: 1ch;
+  vertical-align: top;
+}
+
+.overview-root.rtl table {
+  direction: rtl;
+}
+
+.overview-root.rtl .title-cell,
+.overview-root.rtl .label-cell {
+  text-align: right;
+  direction: rtl;
+  unicode-bidi: plaintext;
+}
+
+.overview-root.rtl .value-cell {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: left;
+}
+
+.overview-root.rtl .octicon {
+  margin-right: 0;
+  margin-left: 1ch;
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+  }
+}
+
+{{ theme_css }}
+</style>
+<g>
+<rect x="5" y="5" id="background" />
+<g>
+<switch>
+{{ i18n_overview_blocks }}
+</switch>
+</g>
+</g>
+</svg>
